@@ -18,4 +18,4 @@ jobs:
 
       - name: Run Date
         run: |
-          date ls -l
+          date +%Y-%m-%d-%H-%M-%S
