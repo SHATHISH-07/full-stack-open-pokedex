@@ -31,6 +31,3 @@ jobs:
 
       - name: Build project
         run: npm run build
-
-      - name: Deploy
-        run: npm run start-prod
