@@ -1,4 +1,4 @@
-name: deployment Pipeline
+name: Deployment Pipeline
 
 on:
   push:
@@ -15,14 +15,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+
       - name: Install dependencies
         run: npm install
 
-      - name: Run linter
-        run: npm run lint
+      - name: Run ESLint
+        run: npm run eslint
 
       - name: Run tests
         run: npm test
 
       - name: Build project
         run: npm run build
+
+      - name: Deploy
+        run: npm run start-prod
